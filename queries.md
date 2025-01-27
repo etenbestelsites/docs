@@ -866,9 +866,9 @@ Sometimes you may need to construct a "where" clause that compares the results o
 
     $users = User::where(function (Builder $query) {
         $query->select('type')
-            ->from('membership')
-            ->whereColumn('membership.user_id', 'users.id')
-            ->orderByDesc('membership.start_date')
+            ->from('memberships')
+            ->whereColumn('memberships.user_id', 'users.id')
+            ->orderByDesc('memberships.start_date')
             ->limit(1);
     }, 'Pro')->get();
 
